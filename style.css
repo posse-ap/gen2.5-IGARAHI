@@ -1,0 +1,41 @@
+.wrapper{
+  max-width: 500px;
+  margin: 0 auto;
+  
+}
+
+.sitetitle{
+  font-size: 19px;
+}
+
+.content{
+}
+
+.h2{
+  font-size: 12px;
+}
+/*ここからh2のアンダーライン*/
+
+.h2{
+  border-bottom: 2px 7px green;/*下線を引く*//*下線を緑色*/
+  border-width: 4px;
+  
+}
+
+.choice {
+  padding: 8px 19px;
+  margin: 2em 0;
+  color: #2c2c2f;
+  background: #fbfbfc;
+  box-shadow: -4px -4px rgb(160, 155, 155) inset;
+  border-radius: 5px;
+}
+
+.choice {
+  list-style: none;
+}
+
+
+
+
+
