@@ -29,9 +29,6 @@
   background: #fbfbfc;
   box-shadow: -4px -4px rgb(160, 155, 155) inset;
   border-radius: 5px;
-}
-
-.choice {
   list-style: none;
 }
 
@@ -39,3 +36,23 @@
 
 
 
+.answer {
+  background: blue;
+  color: #fbfbfc;
+  
+}
+
+
+/*truebox*/
+
+.truebox{ 
+  padding-left: 15px;
+    border: solid 1px #F5F5F5;
+    border-radius: 4px;
+    background-color: #F5F5F5 ;
+}
+
+.truebox h3{
+  text-decoration: underline #300fe9;
+  padding-bottom: 3px;
+}
