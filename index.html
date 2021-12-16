@@ -16,17 +16,20 @@
       <img src="./img/gazou1.png" >
       <ul class="list-of-choices" id="btn">
         <li class="choice" id="correct">たかなわ</li>
-        <li class="choice">こうわ</li>
-        <li class="choice">たかわ</li>
+        <li class="choice false" id="false" onclick="missclicked()">こうわ</li>
+        <li class="choice false" id="false2" onclick="missclicked()">たかわ</li>
       </ul>
-      <div class="truebox">      
-        <h3 class="">正解！</h3>
+      <div class="truebox"  id="truebox">      
+        <h3>正解！</h3>
 
       <p>正解は「たかなわ」です！
       </p>
-
+      
+      </div>
+      <div class="falsebox" id="falsebox">
+      <h4>不正解！</h4>
+      <p>正解は「たかなわ」です！</p>
     </div>
-
 
     </div>
 
