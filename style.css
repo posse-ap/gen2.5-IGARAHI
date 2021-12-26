@@ -39,12 +39,15 @@
 .answer {
   background: blue;
   color: #fbfbfc;
-  
 }
 
 
 /*truebox*/
 
+.true{
+  
+
+}
 .truebox{ 
   display: none;
   padding-left: 15px;
