@@ -1,0 +1,73 @@
+.wrapper{
+  text-align: center;
+}
+
+.topTitle{
+  font-size: 15px;
+}
+
+
+.choicesPosition{
+  list-style: none;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.choicePosition{
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  padding: 8px 5%;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 0 black;
+}
+
+.titlePosition{
+  text-align: left;
+  font-size: 14px;
+}
+
+.titlePosition::after{
+  display: block;
+  background-color: #00ab36;
+  content: '';
+  height: 1px;
+  width: 100px;
+  margin-top: 3px;
+}
+
+.trueBox ,.falseBox {
+    border: solid 0px;
+    border-radius: 3px;
+    background-color: rgb(230, 224, 224);
+    margin: 0 auto;
+    max-width: 400px;
+    padding-left: 15px;
+    display: none;
+}
+
+.trueBox h2{
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: initial;
+  text-decoration-color: red;
+  text-align: left;
+}
+
+.falseBox h2{
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: initial;
+  text-decoration-color: blue;
+  text-align: left;
+
+}
+.trueBox p,.falseBox p{
+  text-align: left;
+}
+
+
+
+
