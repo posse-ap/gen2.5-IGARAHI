@@ -63,11 +63,25 @@
   text-decoration-color: blue;
   text-align: left;
 
+
 }
 .trueBox p,.falseBox p{
   text-align: left;
 }
 
 
+.true{
+  background-color: blue;
+  color: white;
+}
 
+.false{
+  background-color: red;
+  color: white;
+}
+
+.cantClick{
+  pointer-events: none;
+
+}
 
