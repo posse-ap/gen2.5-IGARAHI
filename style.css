@@ -51,7 +51,7 @@
   text-decoration: underline;
   text-decoration-line: underline;
   text-decoration-style: initial;
-  text-decoration-color: red;
+  text-decoration-color: blue;
   text-align: left;
 }
 
@@ -60,7 +60,7 @@
   text-decoration: underline;
   text-decoration-line: underline;
   text-decoration-style: initial;
-  text-decoration-color: blue;
+  text-decoration-color: red;
   text-align: left;
 
 
@@ -82,6 +82,5 @@
 
 .cantClick{
   pointer-events: none;
-
 }
 

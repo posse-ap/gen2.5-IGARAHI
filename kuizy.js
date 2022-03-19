@@ -3,6 +3,11 @@
 
 const wrapper = document.getElementById('wrapper');
 
+
+
+
+
+
 var content;
 
 
@@ -29,12 +34,12 @@ var content;
     ];
     
 
-    var insertHtml =`<h1 class="topTitle">ガチで東京の人しか解けない！＃東京の難読地名クイズ</h1>
+    var insertHtml =`
     <p class="titlePosition">` + ` ${i}` + `.この地名なんて読む？</p>
-    <a class="imgPosition"><img src="./img/` + ` ${i}` + `.png"></a>`
-    
+    <img src="./img/${i}.png" class="imgPosition">` 
+
     randomNumber.forEach(function (answerRandomNumber){
-      insertHtml = insertHtml + `<li class="choicePosition" id="choiceQuestion${i-1}-${answerRandomNumber}" onclick="answer(${i-1}-${answerRandomNumber})">ok</li>`;
+      insertHtml = insertHtml + `<li class="choicePosition" id="choiceQuestion${i-1}-${answerRandomNumber}" onclick="answer(${i-1},${answerRandomNumber})">${numbers[i-1][answerRandomNumber]}</li>`;
       console.log(numbers[i-1][answerRandomNumber]);
     });
 
@@ -46,14 +51,14 @@ var content;
     // ${numbers[i-1][answerRandomNumber]}
     
     
-    insertHtml = insertHtml + `<div class="trueBox" id="trueBox">
+    insertHtml = insertHtml + `<div class="trueBox" id="trueBox${i-1}">
     <h2>正解！</h2>
-    <p>正解はたかなわです！
+    <p>正解は${numbers[i-1][0]}です！
     </p>
     </div>
-    <div class="falseBox" id="falseBox">
+    <div class="falseBox" id="falseBox${i-1}">
     <h2>不正解！</h2>
-    <p>正解はたかなわです！
+    <p>正解は${numbers[i-1][0]}です！
     </p>
     
     </div>`
@@ -69,7 +74,7 @@ var content;
       let newPosition,
           temp;
     
-        for (let i = arr.length ;i >=0; i--){
+        for (let i = arr.length-1 ;i >0; i--){
           newPosition = Math.floor(Math.random() * (i + 1));
           temp = arr[i];
           arr[i] = arr[newPosition];
@@ -82,29 +87,35 @@ var content;
                //1-------1
 function answer(question,qed){
 
-
-
-  
-  
-
-
-
-  let falseAnswer = numbers[question][1];
-  let trueBox = document.getElementById('trueBox');
-  let falseBox = document.getElementById('falseBox');
+  let trueBox = document.getElementById(`trueBox${question}`);
+  let falseBox = document.getElementById(`falseBox${question}`);
 
   if(qed === 0){
-    document.getElementById(`choiceQuestion0-0`).classList.add('true');
+    trueBox.style.display="block";
+    document.getElementById(`choiceQuestion${question}-${0}`).classList.add('true');
 
     document.getElementById(`choiceQuestion${question}-${0}`).classList.add('cantClick');
 
     document.getElementById(`choiceQuestion${question}-${1}`).classList.add('cantClick');
 
     document.getElementById(`choiceQuestion${question}-${2}`).classList.add('cantClick');
-    trueBox.style.display="block";
+    
 
+  }else if(qed ===1){
+    falseBox.style.display="block";
+    document.getElementById(`choiceQuestion${question}-${1}`).classList.add('false');
+    document.getElementById(`choiceQuestion${question}-${0}`).classList.add('true');
+
+    document.getElementById(`choiceQuestion${question}-${0}`).classList.add('cantClick');
+
+    document.getElementById(`choiceQuestion${question}-${1}`).classList.add('cantClick');
+
+    document.getElementById(`choiceQuestion${question}-${2}`).classList.add('cantClick');
+    console.log('1',falseAnswer);
+  
   }else{
-    falseAnswer.classList.add('false');
+    falseBox.style.display="block";
+    document.getElementById(`choiceQuestion${question}-${2}`).classList.add('false');
     document.getElementById(`choiceQuestion${question}-${0}`).classList.add('true');
 
     document.getElementById(`choiceQuestion${question}-${0}`).classList.add('cantClick');
@@ -114,7 +125,7 @@ function answer(question,qed){
     document.getElementById(`choiceQuestion${question}-${2}`).classList.add('cantClick');
     document.getElementById(`choiceQuestion${question}-${2}`).classList.add('false');
     console.log('1',falseAnswer);
-    falseBox.style.display="block";
+  
   }
 
 };
@@ -123,20 +134,6 @@ function answer(question,qed){
 
 
 
-
-
-// function shuffle(arrays){
-//   const array =arrays.slice()
-//   newPosition,
-//   temp
-//   for (let i = array.length ;i>= 0; i--){
-//     newPosition,
-//     temp
-
-//     const randomINdex = Math.floor(Math.random()* (i + 1));
-
-
-//   }
 
 
 
