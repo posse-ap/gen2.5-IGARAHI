@@ -1,40 +1,71 @@
-.wrapper{
-  margin: 0 auto;
-  max-width: 500px;
+body{
+  width: 100vw;
+  height: 100vh;
 }
 
-.posseLogo{
-  height: 34px;
-  margin-left: 8px;
+
+
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.headerPosition{
+  height: 64px;
   display: flex;
 }
 
 
-header{
-  border: 1px solid;
-  border-color: aqua;
-  max-width: 100%;
+
+
+.posseLogo{
   height: 64px;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  right: 0%;
+  margin-left: 8px;
 }
 
 
-.mainContent{
-  border: 1px solid;
-  border-color: aqua;
-  width: 100%;
-  margin-top: 64px;
-  height: 1;
+.weekPosition{
+  color: rgb(114, 240, 240);
+  margin-top: 15px;
+}
+
+.headerRight{
+  margin-left: 500px;
+  display: flex;
 }
 .contentLeft{
-
-
+  border: solid 1px red;
 }
 
 
+.contentLeftLog{
+  display: flex;
+}
+
+.contentLeft div{
+  padding-left: 20px;
+}
+
+.contentLeftBottom {
+  height: 500px;
+  width: 500px;
+}
 .contentRight{
-
+  border: solid 1px blue;
+  display: flex;
 }
+
+
+.contentRight img{
+  width: 300px;
+  height: 1000px;
+}
+
+
+
+
+
+
+
