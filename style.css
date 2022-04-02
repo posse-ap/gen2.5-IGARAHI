@@ -66,6 +66,32 @@ body{
 
 
 
+/* モーダル */
+
+.modal{
+  width: 900px;
+}
+.modalForm{
+  display: flex;
+}
 
 
+
+.modalLearndayLanguage{
+  
+}
+
+.sectionsSelection label{
+  background-color: #f5f5f8;
+
+
+}
+
+.modalLearntimeTwittercoment{
+
+}
+
+.logSubmit{
+  display: block;
+}
 
