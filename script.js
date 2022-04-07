@@ -8,7 +8,6 @@ console.log("test");
 
 function logPost(){
   console.log("aaa");
-  document.getElementById('mainWrapper').style.display="none";
   document.getElementById('modal').style.display="block";
 }
 
