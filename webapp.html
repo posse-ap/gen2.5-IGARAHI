@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
   <title>Document</title>
 </head>
 
@@ -17,11 +18,11 @@
       4th week
     </div>
     <div class="headerRight">
-      <button class="logPost">記録・投稿</button>
+      <button class="logPost" onclick="logPost()">記録・投稿</button>
     </div>
   </header>
   <!-- headerの下の親要素 -->
-  <div class="wrapper">
+  <div class="wrapper" id="mainWrapper">
 
     <div class="contentLeft">
       <div class="contentLeftLog">
@@ -56,61 +57,75 @@
     <!-- header下の親要素終了 -->
 
   </div>
+
+
+
+
+
+
+
+
   <!-- モーダル -->
-  <div class="modal">
-    <form action="/" class="modalForm">
+  <div class="center">
+    <div class="modal" id="modal">
+      <div class="extraDiv">
+        <button class="extra">×</button>
+      </div> 
 
-      <!-- ×ボタン -->
+      <form action="/" class="modalForm">
+
+        <!-- ×ボタン -->
+
+        <!-- モーダル画面の左div -->
+        <div class="modalLearndayLanguage">
+          <div class="borderLearnDay">
+            <p>学習日</p>
+            <input type="text">
+          </div>
+
+          <div class="borderLearnContents">
+            <input class="sectionsSelection">
+            <p>学習コンテンツ（複数選択可）</p>
+            <input type="checkbox" name="studyContent"><label>N予備校</label>
+            <input type="checkbox" name="studyContent"><label>ドットインストール</label>
+            <input type="checkbox" name="studyContent"><label>POSSE課題</label>
+          </div>
+
+          <div class="borderLearnLanguage">
+            <p>学習言語（複数選択可）</p>
+            <input type="checkbox" name="studyContent"><label>HTML</label>
+            <input type="checkbox" name="studyContent"><label>CSS</label>
+            <input type="checkbox" name="studyContent"><label>Javascript</label>
+            <input type="checkbox" name="studyContent"><label>PHP</label>
+            <input type="checkbox" name="studyContent"><label>Laravel</label>
+            <input type="checkbox" name="studyContent"><label>SQL</label>
+            <input type="checkbox" name="studyContent"><label>SHELL</label>
+            <input type="checkbox" name="studyContent"><label>情報システム基礎知識（その他）</label>
+          </div>
+
+        </div>
+
+
+        <!-- モーダル画面の右div -->
+        <div class="modalLearntimeTwittercoment">
+          <div>
+            <p>学習時間</p>
+            <input type="text">
+          </div>
+
+          <div>
+            <p>Twitter用コメント</p>
+            <textarea type="text">test</textarea>
+          </div>
+
+        </div>
+
+      </form>
       <div>
-        <button>×</button>
-      </div>
-      <!-- モーダル画面の左div -->
-      <div class="modalLearndayLanguage">
-        <div>
-          <p>学習日</p>
-          <input type="text">
-        </div>
-        <div>
-          <input class="sectionsSelection">
-          <p>学習コンテンツ（複数選択可）</p>
-          <input type="checkbox" name="studyContent"><label>N予備校</label>
-          <input type="checkbox" name="studyContent"><label>ドットインストール</label>
-          <input type="checkbox" name="studyContent"><label>POSSE課題</label>
-        </div>
-        <div>
-          <p>学習言語（複数選択可）</p>
-          <input type="checkbox" name="studyContent"><label>HTML</label>
-          <input type="checkbox" name="studyContent"><label>CSS</label>
-          <input type="checkbox" name="studyContent"><label>Javascript</label>
-          <input type="checkbox" name="studyContent"><label>PHP</label>
-          <input type="checkbox" name="studyContent"><label>Laravel</label>
-          <input type="checkbox" name="studyContent"><label>SQL</label>
-          <input type="checkbox" name="studyContent"><label>SHELL</label>
-          <input type="checkbox" name="studyContent"><label>情報システム基礎知識（その他）</label>
-        </div>
-
+        <button class="logSubmit">記録・投稿</button>
       </div>
 
-
-      <!-- モーダル画面の右div -->
-      <div class="modalLearntimeTwittercoment">
-        <div>
-          <p>学習時間</p>
-          <input type="text">
-        </div>
-
-        <div>
-          <p>Twitter用コメント</p>
-          <textarea type="text">test</textarea>
-        </div>
-
-      </div>
-      
-    </form>
-    <div>
-      <button class="logSubmit">記録・投稿</button>
     </div>
-
   </div>
 
 

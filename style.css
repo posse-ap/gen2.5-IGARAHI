@@ -1,6 +1,4 @@
 body{
-  width: 100vw;
-  height: 100vh;
 }
 
 
@@ -10,11 +8,13 @@ body{
   height: 100%;
   width: 100%;
   display: flex;
+  justify-content: space-around
 }
 
 .headerPosition{
   height: 64px;
   display: flex;
+  justify-content: space-between
 }
 
 
@@ -68,12 +68,32 @@ body{
 
 /* モーダル */
 
+
+.center{
+  text-align: center;
+  display: flex;
+  justify-content: space-around
+  border :solid 
+}
 .modal{
+  text-align: center;
   width: 900px;
+  display: none;
 }
 .modalForm{
   display: flex;
+justify-content: space-between
 }
+
+.extraDiv{
+  text-align: right;
+}
+
+.borderLearnDay,.borderLearnContents,.borderLearnLanguage{
+  border: solid 1px blue;
+  margin-top: 20px;
+}
+
 
 
 
@@ -91,7 +111,7 @@ body{
 
 }
 
-.logSubmit{
+/* .logSubmit{
   display: block;
-}
+} */
 
