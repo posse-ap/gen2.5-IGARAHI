@@ -1,8 +1,4 @@
-/* .modalMask{
-  height: 100vh;
-  background-color: #dfdddd;
 
-} */
 
 
 
@@ -12,8 +8,8 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
   z-index: 1;
+justify-content: flex-start;
 }
 
 .headerPosition{
@@ -85,6 +81,10 @@
   display: flex;
   justify-content: space-around;
   z-index: 15;
+position: absolute;
+left: 0;
+top: 0;
+
 }
 .modal{
   background-color: rgb(84, 82, 82);

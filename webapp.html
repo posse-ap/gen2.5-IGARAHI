@@ -6,81 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+
   <title>Document</title>
 </head>
 
 <body>
-      <div class="modalMask" id="modalMask">
-  <header class="headerPosition">
-    <img src="./img/posseLogo.png" class="posseLogo">
-    <div class="weekPosition">
-      4th week
-    </div>
-    <div class="headerRight">
-      <button class="logPost" onclick="logPost()">記録・投稿</button>
-    </div>
-  </header>
-  <!-- headerの下の親要素 -->
-  <div class="wrapper" id="mainWrapper">
-
-    <div class="contentLeft">
-      <div class="contentLeftLog">
-        <div>
-          <p>today</p>
-          <p>000<br>hours</p>
-        </div>
-        <div>
-          <p>today</p>
-          <p>000<br>hours</p>
-        </div>
-        <div>
-          <p>today</p>
-          <p>000<br>hours</p>
-        </div>
-      </div>
-      <div class="contentLeftGraph" id="barGraph">
-      
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaaa</p>
-      </div>
-    </div>
-
-
-    <div class="contentRight">
-      <div class="">
-        <img src="./img/pchart.png" alt="">
-      </div>
-      <div>
-        <img src="./img/pchart.png" alt="">
-      </div>
-
-    </div>
-    <!-- header下の親要素終了 -->
-
-  </div>
-
-
-
-
-
-
-
 
   <!-- モーダル -->
   <div class="center">
     <div class="modal" id="modal">
       <div class="extraDiv">
         <button class="extra">×</button>
-      </div> 
+      </div>
 
       <form action="/" class="modalForm">
 
@@ -96,6 +33,7 @@
           <div class="borderLearnContents">
             <input class="sectionsSelection">
             <p>学習コンテンツ（複数選択可）</p>
+
             <input type="checkbox" name="studyContent"><label>N予備校</label>
             <input type="checkbox" name="studyContent"><label>ドットインストール</label>
             <input type="checkbox" name="studyContent"><label>POSSE課題</label>
@@ -137,8 +75,82 @@
 
     </div>
   </div>
+  <!-- トップ画面 -->
 
-</div>
+
+  <div class="modalMask" id="modalMask">
+    <header class="headerPosition">
+      <img src="./img/posseLogo.png" class="posseLogo">
+      <div class="weekPosition">
+        4th week
+      </div>
+      <div class="headerRight">
+        <button class="logPost" onclick="logPost()">記録・投稿</button>
+      </div>
+    </header>
+    <!-- headerの下の親要素 -->
+    <div class="wrapper" id="mainWrapper">
+
+      <div class="contentLeft">
+        <div class="contentLeftLog">
+          <div>
+            <p>today</p>
+            <p>000<br>hours</p>
+          </div>
+          <div>
+            <p>today</p>
+            <p>000<br>hours</p>
+          </div>
+          <div>
+            <p>today</p>
+            <p>000<br>hours</p>
+          </div>
+        </div>
+        <div class="contentLeftGraph" id="barGraph">
+
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaaa</p>
+        </div>
+      </div>
+
+
+      <div class="contentRight">
+        <div class="chart-container" style="position: relative; width: 40vw; height:80vh">
+          <canvas id="myChart"></canvas>
+        </div  class="chart-container" style="position: relative; width: 40vw; height:80vh">
+        <div>
+          <canvas id="myChartR"></canvas>
+        </div>
+
+
+
+      </div>
+      <!-- header下の親要素終了 -->
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="./script.js"></script>
+
 </body>
 
 </html>

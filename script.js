@@ -4,58 +4,158 @@ console.log("test");
 
 
 
-const labels = Utils.months({count: 7});
-const data = {
-  labels: labels,
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(201, 203, 207, 0.2)'
-    ],
-    borderColor: [
-      'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-      'rgb(153, 102, 255)',
-      'rgb(201, 203, 207)'
-    ],
-    borderWidth: 1
-  }]
+function logPost(){
+  console.log("aaa");
+  document.getElementById('modal').style.display="block";
+  document.getElementById('modalMask').style.backgroundColor = '#dfdddd';
+}
+
+
+
+
+
+
+
+// ドーナッツ一個目
+var ctx = document.getElementById("myChart");
+var dataLabelPlugin = {
+  afterDatasetsDraw: function (chart, easing) {
+      // To only draw at the end of animation, check for easing === 1
+      var ctx = chart.ctx;
+      chart.data.datasets.forEach(function (dataset, i) {
+          var dataSum = 0;
+          dataset.data.forEach(function (element) {
+              dataSum += element;
+          });
+          var meta = chart.getDatasetMeta(i);
+          if (!meta.hidden) {
+              meta.data.forEach(function (element, index) {
+                  // Draw the text in black, with the specified font
+                  ctx.fillStyle = 'rgb(255, 255, 255)';
+                  var fontSize = 12;
+                  var fontStyle = 'normal';
+                  var fontFamily = 'Helvetica Neue';
+                  ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+                  // Just naively convert to string for now
+                  var labelString = chart.data.labels[index];
+                  var dataString = (Math.round(dataset.data[index] / dataSum * 1000) / 10).toString() + "%";
+                  // Make sure alignment settings are correct
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'middle';
+                  var padding = 5;
+                  var position = element.tooltipPosition();
+                  // ctx.fillText(labelString, position.x, position.y - (fontSize / 2) - padding);
+                  ctx.fillText(dataString, position.x, position.y + (fontSize / 2) - padding);
+              });
+          }
+      });
+  }
 };
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Javascript", "CSS", "PHP", "HTML","Laravel","SQL","SHELL","情報システム基礎知識(その他)"],
+    datasets: [{
+        backgroundColor: [
+          "#0345ec",
+          "#0f71bd",
+          "#20bdde",
+          "#4bd1fe",
+          "#b29ef3",
+          "#6d46ec",
+          "#4a17ef",
+          "#3105c0"
 
-// function logPost(){
-//   console.log("aaa");
-//   document.getElementById('modal').style.display="block";
-// }
+        ],
+        data: [38, 31, 21, 10,12,11,11,11]
+    }]
+  },
+  plugins: [dataLabelPlugin],
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      position: 'bottom'
+  },title: {
+      display: true,
+      text: '学習言語'
+    },
+    mounted () {
+      this.renderChart(this.data, this.options)
+    }
 
+  }
 
+});
 
-// window.onload = function () {
-//   let context = document.getElementById('barGraph');
+// ドーナッツ２個目
+var ctx = document.getElementById("myChartR");
+var dataLabelPlugin = {
+  afterDatasetsDraw: function (chart, easing) {
+      // To only draw at the end of animation, check for easing === 1
+      var ctx = chart.ctx;
+      chart.data.datasets.forEach(function (dataset, i) {
+          var dataSum = 0;
+          dataset.data.forEach(function (element) {
+              dataSum += element;
+          });
+          var meta = chart.getDatasetMeta(i);
+          if (!meta.hidden) {
+              meta.data.forEach(function (element, index) {
+                  // Draw the text in black, with the specified font
+                  ctx.fillStyle = 'rgb(255, 255, 255)';
+                  var fontSize = 12;
+                  var fontStyle = 'normal';
+                  var fontFamily = 'Helvetica Neue';
+                  ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+                  // Just naively convert to string for now
+                  var labelString = chart.data.labels[index];
+                  var dataString = (Math.round(dataset.data[index] / dataSum * 1000) / 10).toString() + "%";
+                  // Make sure alignment settings are correct
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'middle';
+                  var padding = 5;
+                  var position = element.tooltipPosition();
+                  // ctx.fillText(labelString, position.x, position.y - (fontSize / 2) - padding);
+                  ctx.fillText(dataString, position.x, position.y + (fontSize / 2) - padding);
+              });
+          }
+      });
+  }
+};
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["ドットインストール", "N予備校", "POSSE課題"],
+    datasets: [{
+        backgroundColor: [
+          "#0345ec",
+          "#0f71bd",
+          "#20bdde",
+          "#4bd1fe",
+          "#b29ef3",
+          "#6d46ec",
+          "#4a17ef",
+          "#3105c0"
 
-//   new Chart(context, {
-//     type: 'bar',
-//     data: {
-//       labels: ['2015年', '2016年', '2017年', '2018年', '2019年', '2020年'],
-//       datasets: [{
-//         label: "日本の人口推移",
-//         data: [127094745, 127041812, 126918546, 126748506, 126555078, 126146099],
-//       }],
-//     },
-//     options: {
-//       responsive: false
-//     }
-//   })
-//   return;
-// }
+        ],
+        data: [38, 31, 21]
+    }]
+  },
+  plugins: [dataLabelPlugin],
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      position: 'bottom'
+  },title: {
+      display: true,
+      text: '学習コンテンツ'
+    },
+    mounted () {
+      this.renderChart(this.data, this.options)
+    }
+
+  }
+
+});
 
 
