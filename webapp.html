@@ -16,7 +16,7 @@
   <div class="center">
     <div class="modal" id="modal">
       <div class="extraDiv">
-        <button class="extra">×</button>
+        <button class="extra" onclick="extra()">×</button>
       </div>
 
       <form action="/" class="modalForm">
@@ -27,28 +27,56 @@
         <div class="modalLearndayLanguage">
           <div class="borderLearnDay">
             <p>学習日</p>
-            <input type="text">
+            <input type="text" class="learnDay">
           </div>
 
           <div class="borderLearnContents">
-            <input class="sectionsSelection">
             <p>学習コンテンツ（複数選択可）</p>
 
-            <input type="checkbox" name="studyContent"><label>N予備校</label>
-            <input type="checkbox" name="studyContent"><label>ドットインストール</label>
-            <input type="checkbox" name="studyContent"><label>POSSE課題</label>
+            <div class="contentFlex">
+              <div>
+                <input type="checkbox" name="studyContent"><label>N予備校</label>
+              </div>
+
+              <div>
+                <input type="checkbox" name="studyContent"><label>ドットインストール</label>
+              </div>
+
+              <div>
+                <input type="checkbox" name="studyContent"><label>POSSE課題</label>
+              </div>
+
+            </div>
           </div>
 
           <div class="borderLearnLanguage">
             <p>学習言語（複数選択可）</p>
-            <input type="checkbox" name="studyContent"><label>HTML</label>
-            <input type="checkbox" name="studyContent"><label>CSS</label>
-            <input type="checkbox" name="studyContent"><label>Javascript</label>
-            <input type="checkbox" name="studyContent"><label>PHP</label>
-            <input type="checkbox" name="studyContent"><label>Laravel</label>
-            <input type="checkbox" name="studyContent"><label>SQL</label>
-            <input type="checkbox" name="studyContent"><label>SHELL</label>
-            <input type="checkbox" name="studyContent"><label>情報システム基礎知識（その他）</label>
+            <div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>HTML</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>CSS</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>Javascript</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>PHP</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>Laravel</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>SQL</label>
+              </div>
+              <div>
+                <input type="checkbox" name="studyContent"><label>SHELL</label>
+              </div>
+              <!-- <div>
+                <input type="checkbox" name="studyContent"><label>情報システム基礎知識（その他）</label>
+              </div> -->
+            </div>
           </div>
 
         </div>
@@ -106,28 +134,22 @@
             <p>000<br>hours</p>
           </div>
         </div>
-        <div class="contentLeftGraph" id="barGraph">
-
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaaa</p>
+        <div class="contentLeftGraph">
+          <canvas class="barGraph" id="barGraph"></canvas>
         </div>
       </div>
 
 
       <div class="contentRight">
-        <div class="chart-container" style="position: relative; width: 40vw; height:80vh">
+        <div class="chart-container" style="position: relative;">
           <canvas id="myChart"></canvas>
-        </div  class="chart-container" style="position: relative; width: 40vw; height:80vh">
-        <div>
-          <canvas id="myChartR"></canvas>
+        </div class="chart-container">
+
+        <div class="chart-containerR">
+          <canvas id="myChartR" class="myChartR"></canvas>
         </div>
+
+
 
 
 
@@ -146,9 +168,18 @@
 
 
   </div>
-
+  <div class="dayLog">
+    <p class="max">
+      < </p>
+        <p class="day">2020年6月10日</p>
+        <p class="max"> > </p>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+
   <script src="./script.js"></script>
 
 </body>

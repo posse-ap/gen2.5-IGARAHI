@@ -10,16 +10,47 @@ function logPost(){
   document.getElementById('modalMask').style.backgroundColor = '#dfdddd';
 }
 
+function extra(){
+document.getElementById('modal').style.display="none";
+}
 
+// 棒グラフ
+var barChart = document.getElementById("barGraph");
+var myBarChart = new Chart(barChart , {
+  type: 'bar',
+  data: {
+   //凡例のラベル
+    labels: ['','2','', '4','', '6','', '8','', '10','', '12','', '14','', '16', '','18','', '20','', '22','', '24','', '26','', '30'],
+    datasets: [
+      {
 
-
+        data: [ 0,2,4,6,5,7,2,9,2,5,4,3,6,8,4,8,3,8,9,1,2,14,4,,5,1,1,6,7,3], //グラフのデータ
+        backgroundColor: "rgb(48,175,203)"
+      }
+    ]
+  },
+  options: {
+    legend:{
+        display: false
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+          suggestedMax: 8, //最大値
+          suggestedMin: 0, //最小値
+          stepSize: 2, //縦ラベルの数値単位
+          }
+      }]
+    },
+  }
+});
 
 
 
 // ドーナッツ一個目
 var ctx = document.getElementById("myChart");
 var dataLabelPlugin = {
-  afterDatasetsDraw: function (chart, easing) {
+  afterDatasetsDraw: function (chart, easing){
       // To only draw at the end of animation, check for easing === 1
       var ctx = chart.ctx;
       chart.data.datasets.forEach(function (dataset, i) {
@@ -157,5 +188,9 @@ var myChart = new Chart(ctx, {
   }
 
 });
+
+
+
+
 
 
