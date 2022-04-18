@@ -160,26 +160,45 @@ top: 21%;
   text-align: left;
 }
 
+.borderLearnLanguage div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+}
+
 .borderLearnContents div div{
   background-color: #d9d8d8;
   border-radius: 30px;
-  margin-right: 3px;
+  margin-right: 5px;
+  margin-top: 10px;
 }
 .borderLearnLanguage div div{
   background-color: #d9d8d8;
   border-radius: 30px;
   margin-right: 3px;
+  width: auto;
 }
-.borderLearnLanguage div{
-  display: flex;
-}
+
 .contentFlex{
   display: flex;
+  flex-wrap: wrap;
 }
 .contentFlex div{
-  width: auto;
-  height: auto;
+  height: 25px;
+  height: 24px;
+    width: 183px;
+  height: 24px;
 }
+.contentFlex label{
+  margin: 7px;
+  margin-right: 7px;
+}
+/* .contentFlex div input{
+  position: absolute;
+  left: 59px;
+  top: 181px;
+} */
+
 .modalForm{
   display: flex;
 justify-content: space-between
