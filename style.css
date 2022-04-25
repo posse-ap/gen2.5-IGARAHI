@@ -1,5 +1,7 @@
 
-
+@media screen and ( min-width:480px )
+{
+}
 
 body{
   z-index: 1;
@@ -176,7 +178,11 @@ top: 21%;
   background-color: #d9d8d8;
   border-radius: 30px;
   margin-right: 3px;
-  width: auto;
+  width: 150px;
+}
+.borderLearnLanguage div div input{
+width: auto;
+height: 15px;
 }
 
 .contentFlex{
@@ -193,6 +199,21 @@ top: 21%;
   margin: 7px;
   margin-right: 7px;
 }
+
+.learnTime{
+  width: 400px;
+  height: 25px;
+}
+.twitterComment{
+  width: 400px;
+  height: 229px;
+}
+.twitterShare{
+  text-align: left;
+  margin-left: 68px;
+  margin-top: 40px;
+}
+
 /* .contentFlex div input{
   position: absolute;
   left: 59px;
