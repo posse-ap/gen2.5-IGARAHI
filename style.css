@@ -1,11 +1,8 @@
 
-@media screen and ( min-width:480px )
-{
-}
-
 body{
   z-index: 1;
   background-color: #d9d8d8;
+  width: 1500px;
 }
 
 
@@ -283,3 +280,151 @@ justify-content: space-between
   color: rgb(127, 127, 240);
   font-size: 30px;
 }
+
+
+
+
+@media screen and (max-width: 1050px) {
+  html {
+    font-size: 3px;
+    width: 100%;
+  }
+  .wrapper{
+    display: block;
+  }
+  .contentLeft{
+    margin: 60px auto;
+    height: 543px;
+    margin-left: 26%;
+  }
+  .contentRight{
+    margin: 0 auto;
+    padding-bottom: 55px;
+  }
+
+}
+
+  /* .headerPosition{
+    grid-template-columns: 10rem 10rem auto;
+  }
+  .logPost {
+    display: none;
+  }
+
+  .wrapper  {
+    width: 61rem;
+    grid-template-columns: 19rem 2rem 8.5rem 2rem 8.5rem 2rem 19rem;
+    grid-template-rows: 20rem 4rem 30rem 2rem 50rem auto auto;
+  }
+  .wrapper  .modalLearntimeTwittercoment {
+    font-size: 2.5rem;
+  }
+  .main .container .record__hour {
+    font-size: 2.5rem;
+  }
+  .main .container .record input {
+    font-size: 5rem;
+  }
+  .main .container .record .option__item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left: 0rem;
+  }
+  .main .container .today__number {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .container .month__number {
+    grid-column: 3/6;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .container .total__number {
+    grid-column: 7/8;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .container .month__report {
+    grid-column: 1/8;
+    grid-row: 3/4;
+  }
+  .main .container .languages__report {
+    grid-column: 5/8;
+    grid-row: 5/6;
+  }
+  .main .container .contents__report {
+    grid-column: 1/4;
+    grid-row: 5/6;
+  }
+  .main .container .date {
+    grid-column: 1/8;
+    grid-row: 6/7;
+    text-align: center;
+  }
+  .main .container .sp__push {
+    display: block;
+    grid-column: 1/8;
+    grid-row: 7/8;
+  }
+
+  .modal .samplemodal-box {
+    width: 100%;
+    max-width: 90rem;
+    vertical-align: bottom;
+    position: relative;
+  }
+  .modal__inners {
+    height: 90rem;
+  }
+  .modal__inner__list {
+    height: auto;
+  }
+  .modal input[type=text], .modal input[type=date] {
+    width: auto;
+  }
+  .modal .checkbox__item {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+  }
+
+  .push__button {
+    height: 7rem;
+    width: 60rem;
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    border-radius: 5rem;
+  }
+}
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+html {
+  font-size: 10px;
+  background-color: rgba(202, 203, 204, 0.3);
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 7px;
+  } */
+
