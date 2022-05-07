@@ -189,6 +189,89 @@ var myChart = new Chart(ctx, {
 
 });
 
+// tweetしない場合
+
+let logPostContainer = document.getElementById('logPostContainer');
+
+let twitterComment = document.getElementById('twitterComment').value;
+
+let logCompletedModal = document.getElementById('logCompletedModal');
+
+let twitterShare = document.getElementById('twitterShare');
+
+let loading = document.getElementById('loading');
+
+
+
+
+
+
+
+/* tweet機能 */
+
+
+
+function LogPost(){
+
+  if(twitterShare.checked === true){
+    // twitterに投稿
+    window.open("https://twitter.com/intent/tweet?text=" + twitterComment);
+
+  //   // loading画面モーダル
+
+
+  loading.style.visibility = 'visible';
+  //   function init() {
+  //     let elements = document.getElementsByTagName('button');
+  //     for (let element of elements) {
+  //         if (element.getAttribute('data-id')) {
+  //             element.addEventListener('click', testLoad);
+  //         }
+  //     }
+  //     stopAllLoad();
+  // }
+  
+  // function testLoad() {
+  //     let dataId = this.getAttribute('data-id');
+  //     if (dataId) {
+  //         startLoad(dataId);
+  //         setTimeout(stopAllLoad, 3000);
+  //     }
+  // }
+  
+  // function startLoad() {
+  //   loading.style.visibility = 'visible';
+  // }
+  
+  // function stopAllLoad() {
+  //     let elements = document.getElementsByClassName('loading');
+  //     for (let element of elements) {
+  //         element.style.visibility = 'hidden';
+  //     }
+  // }
+  
+  // window.addEventListener('loading', init);
+
+    // 完了画面
+    setTimeout(() => {
+      loading.style.visibility = 'hidden';
+
+    logCompletedModal.style.display ="block";
+  }, 5000);
+  }else{
+    // lording画面
+
+
+// 記録完了画面
+    logCompletedModal.style.display ="block";
+  }
+
+
+
+};
+
+logPostContainer.addEventListener('click',LogPost);
+
 
 
 

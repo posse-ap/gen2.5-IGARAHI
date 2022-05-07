@@ -248,8 +248,6 @@ justify-content: space-between
 .sectionsSelection label{
   background-color: #f5f5f8;
   cursor: pointer;
-
-
 }
 
 
@@ -276,6 +274,57 @@ justify-content: space-between
 .max{
   color: rgb(127, 127, 240);
   font-size: 30px;
+}
+
+.logPostContainer{
+  background-color: #1E90FF;
+  border-radius: 10px;
+}
+
+/* loading画面 */
+
+.loading {
+  /* 画面最大 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 背景色（黒、不透明度80%） */
+  background-color: #000000;
+  opacity: 0.8;
+  /* フレックスコンテナ（縦並べ、横中央、縦中央） */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 表示を一番上 */
+  z-index: 999;
+  /* 選択付加 */
+  user-select: none;
+  display: none;
+}
+.load-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 1);
+  animation: rotate 1s linear infinite;
+  display: none;
+}
+
+@keyframes rotate {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+/* 記録完了画面 */
+
+.logCompletedModal{
+  display: none;
 }
 
 

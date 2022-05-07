@@ -92,22 +92,36 @@
 
           <div>
             <p>Twitter用コメント</p>
-            <textarea type="text" class="twitterComment">test</textarea>
+            <textarea type="text" class="twitterComment" id="twitterComment">test</textarea>
           </div>
 
-          <div class="twitterShare">
-            <input type="checkbox" ><label>Twitterにシェアする</label>
+          <div class="twitterShare" id="twitterShare">
+            <input type="checkbox" id="twitterShare"><label>Twitterにシェアする</label>
           </div>
         </div>
 
 
       </form>
       <div>
-        <div class="tweetContainer" id="tweetContainer">記録・投稿</div>
+        <button class="logpostContainer" id="logPostContainer" >記録・投稿</button>
       </div>
 
     </div>
   </div>
+
+
+  <!-- lording画面 -->
+
+  <div id="loading" class="loading center modal">
+  </div>
+
+
+<!-- 記録完了 -->
+<div class="logCompletedModal center" id="logCompletedModal">
+  <h1>記録完了です。</h1>
+</div>
+
+
   <!-- トップ画面 -->
 
 
