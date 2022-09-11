@@ -1,0 +1,94 @@
+html{
+  width: 98vw;
+  height: auto;
+}
+
+.big_img{
+  width: 100%;
+  height: 100%;
+  background: url(https://pas-pol.jp/wp-content/themes/pas-pol/dist/img/mainVisual-overlay@2x.png) no-repeat;
+  background-size: contain;
+    background-position: 0 bottom;
+}
+
+.pas_pol_top_header_ul{
+  color: white;
+  display: flex;
+  margin-right: 11rem;
+}
+
+.pas_pol_top_header_ul li{
+  margin-right: 2rem;
+  list-style: none;
+}
+
+.pas_pol_header{
+  position: relative;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  min-height: 100vh;
+  /* 下部の微妙な隙間の修正 */
+  margin-bottom: -1%;
+}
+
+
+.pas_pol_top_header_hamberger{
+  position: absolute;
+  left: 0%;
+  top: 1%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_most_big_section{
+  text-align: center;
+  width: 100%;
+  background-color: aliceblue;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.top_consept_div p{
+  padding-right:34rem;
+  padding-left:34rem;
+  font-size: 20px;
+  text-align: left;
+}
+.top_consept_div h1{
+  font-size: 44px;
+}
+
+.top_comsept_paspol{
+  margin: 35px auto;
+  font-size: 35px;
+}
+
+/* .s{
+  
+overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: url(../img/concept-siteLogo@2x.png) no-repeat;
+    width: 211px;
+    height: 54px;
+    background-size: 211px 54px;
+    margin: 35px auto;
+} */
+
+
+
+/* product記入欄のcss */
+.paspol_product_section{
+  padding-right: 15rem;
+  padding-left: 15rem;
+
+
+}
+
+
+.top_paspol_product_top{
+  display: flex;
+  text-align: center;
+}
