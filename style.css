@@ -90,5 +90,38 @@ overflow: hidden;
 
 .top_paspol_product_top{
   display: flex;
+  justify-content: space-between;
   text-align: center;
+}
+
+/* produstのmoreボタン */
+.m_button{
+  display: inline-block;
+  width: 162px;
+  height: 46px;
+  line-height: 48px;
+  font-size: 14px;
+  color: black;
+  border: solid 1px black;
+  text-align: center;
+  font-family: "Gill Sans Std Book", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.paspol_product_img_position{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+/* productのarticle装飾 */
+.paspol_product_article{
+  box-sizing: border-box;
+  width: 33%;
 }
