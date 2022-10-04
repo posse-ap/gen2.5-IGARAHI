@@ -9,7 +9,6 @@ if(isset($_GET['id'])) {
     }
 
 
-
 $stmt = $dbh->prepare('SELECT * FROM big_questions WHERE id =:number');
 
 $stmt->bindValue(":number", $number);
