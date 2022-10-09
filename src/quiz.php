@@ -19,6 +19,9 @@ require('./index.php');
     <p>1.この地名なんて読む？</p>
     <div>
       <p>ここに画像入れるよ</p>
+      <tr class="select_box"><?=$select_select_question[0]['name']?></tr>
+      <tr class="select_box"><?=$select_select_question[0]['name']?></tr>
+      <tr class="select_box"><?=$select_select_question[0]['name']?></tr>
     </div>
   </div>
 
