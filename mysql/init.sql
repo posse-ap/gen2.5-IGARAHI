@@ -1,7 +1,6 @@
-DROP SCHEMA IF EXISTS posse;
-CREATE SCHEMA posse;
+DROP DATABASE IF EXISTS posse;
+CREATE DATABASE posse;
 USE posse;
-
 DROP TABLE IF EXISTS big_questions;
 
 CREATE TABLE big_questions(
