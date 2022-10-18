@@ -32,7 +32,7 @@ echo $select_question_img;
     <div class="content">
       <!-- 問題 -->
       <h2 class="h2">この地名は何て読む？</h2>
-      <img src="./img/<?=$select_question_img[0]['image']?>"></img>
+      <img src="./img/<?=$select_question_img[1]['takanawa.png']?>"></img>
       <ul class="list-of-choices">
         <li class="choice">あああ</li>
       </ul>
