@@ -1,31 +1,37 @@
 <?php
-if(isset($_GET['id'])) {
-  $number = $_GET['id'];
-    }
     // 画像
-    if(isset($_GET['id'])) {
-      $select_question_img = $_GET['id'];
-        }
-        var_dump($select_question_img);
+// if(isset($_GET['id'])) {
+//       $select_question_img = $_GET['id'];
+//         }
+//         var_dump($select_question_img);
     // 選択肢
-if(isset($_GET['question_id'])) {
-  $select_question = $_GET['question_id'];
-    }
+// if(isset($_GET['question_id'])) {
+//   $select_question = $_GET['question_id'];
+    // }
+require(dirname(__FILE__) . "/index.php");
+$id = filter_input(INPUT_GET, 'id');
 
+function big_questions ($dbh, $id)
+{
+  $stmt = $dbh->prepare('SELECT * FROM big_questions WHERE id=?');
+
+$stmt->bindValue(1, $id);
+$stmt->execute();
+$big_question_name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+}
 
 
 
 // 東京or広島
-$stmt = $dbh->prepare('SELECT * FROM big_questions WHERE id =:number');
-$stmt->bindValue(":number", $number);
-$stmt->execute();
-$big_question_name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 // 画像
-$question_img = $dbh->prepare('SELECT * FROM questions WHERE id = :image');
-$question_img ->bindValue(':image', $select_question_img);
-$question_img->execute();
-$select_question_img = $question_img ->fetchAll(PDO::FETCH_ASSOC);
+// $question_img = $dbh->prepare('SELECT * FROM questions WHERE id = :id');
+// $question_img ->bindValue(':id', $select_question_img);
+// $question_img->execute();
+// $select_question_img = $question_img ->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($select_question_img[2]['takanawa.png']);
 
 
 
@@ -35,6 +41,3 @@ $select_question_img = $question_img ->fetchAll(PDO::FETCH_ASSOC);
 // $question_number->bindValue(":question_id", $select_question);
 // $question_number->execute();
 // $select_select_question = $question_number->fetchAll(PDO::FETCH_ASSOC);
-
-
-?>
