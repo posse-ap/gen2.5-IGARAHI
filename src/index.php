@@ -1,6 +1,8 @@
 
 <?=
-include('./dbconnect.php') ;
+include('./db_connect.php') ;
+include('./function.php') ;
+
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +18,14 @@ include('./dbconnect.php') ;
 <body>
   <div class="wrapper" id="wrapper">
     <h1 class="content">ガチで
-      <?= $big_question_name[0]['prefecture_name'] ?>
+      <?= $big_question_name[0]['prefecture_name']?>
       の人しか解けない！ #
-      <?= $big_question_name[0]['prefecture_name'] ?>
+      <?= $big_question_name[0]['prefecture_name']?>
       の難読地名クイズ</h1>
     <div class="content">
       <!-- 問題 -->
       <h2 class="h2">この地名は何て読む？</h2>
-      <img src="./img/'<?=$select_question_img[2]['takanawa.png']?>'"></img>
+      <img src="./img/<?=$select_question_img[0]['image']?>"></img>
       <ul class="list-of-choices">
         <li class="choice">あああ</li>
       </ul>
