@@ -1,21 +1,7 @@
-<?php
 
-
-$user = 'root';
-$password = "password";
-try {
-  $dbh = new PDO("mysql:host=db; dbname=posse; charset=utf8", "$user", "$password");
-} catch (PDOException $e) {
-  echo $e->getMessage() . " - " . $e->getLine() . PHP_EOL;
-  echo "接続に失敗しました。";
-}
-
-require('./function.php');
-// echo $big_question_name;
-// echo $select_question_img;
+<?=
+include('./dbconnect.php') ;
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,7 +15,11 @@ require('./function.php');
 </head>
 <body>
   <div class="wrapper" id="wrapper">
-    <h1 class="content">ガチで<?= $big_question_name[0]['prefecture_name'] ?>の人しか解けない！ #<?= $big_question_name[0]['prefecture_name'] ?>の難読地名クイズ</h1>
+    <h1 class="content">ガチで
+      <?= $big_question_name[0]['prefecture_name'] ?>
+      の人しか解けない！ #
+      <?= $big_question_name[0]['prefecture_name'] ?>
+      の難読地名クイズ</h1>
     <div class="content">
       <!-- 問題 -->
       <h2 class="h2">この地名は何て読む？</h2>

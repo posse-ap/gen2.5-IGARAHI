@@ -25,10 +25,10 @@ CREATE TABLE questions(
   image VARCHAR(255) NOT NULL
 );
 
-INSERT INTO questions(big_question_id,image) VALUES
-(1,'takanawa.png'),
-(1,'kameido.png'),
-(2,'mukainada.png');
+INSERT INTO questions(id,big_question_id,image) VALUES
+(1,1,'takanawa.png'),
+(1,1,'kameido.png'),
+(1,2,'mukainada.png');
 
 
 
