@@ -27,7 +27,10 @@ include('./function.php') ;
       <h2 class="h2">この地名は何て読む？</h2>
       <img src="./img/<?=$select_question_img[0]['image']?>"></img>
       <ul class="list-of-choices">
-        <li class="choice">あああ</li>
+        <li class="choice">
+          <!-- <?=$select_select_question[0]['name'];?> -->
+          a
+        </li>
       </ul>
     </div>
   </div>
