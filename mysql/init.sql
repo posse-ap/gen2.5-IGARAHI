@@ -38,20 +38,23 @@ DROP TABLE IF EXISTS choices;
 
 CREATE TABLE choices(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  question_id INT NOT NULL,
+  -- question_id INT NOT NULL,
   name VARCHAR(255) NOT NULL,
   valid INT NOT NULL
 );
 
-INSERT INTO choices(select_question_id,question_id,name,valid) VALUES
-(1,1,'たかなわ',1),
-(1,1,'たかわ',0),
-(1,1,'こうわ',0),
-(1,2,'かめと',0),
-(1,2,'かめど',0),
-(1,2,'かめいど',1),
-(2,3,'むこうひら',0),
-(2,3,'むきひら',0),
-(2,3,'むかいなだ',1);
+INSERT INTO choices(question_id,name,valid) VALUES
+(1,'たかなわ',1),
+(1,'たかわ',0),
+(1,'こうわ',0),
+(2,'かめと',0),
+(2,'かめど',0),
+(2,'かめいど',1),
+(3,'むこうひら',0),
+(3,'むきひら',0),
+(3,'むかいなだ',1);
 
+-- INSERT INTO choices(select_question_id)
 
+-- ALTER TABLE choices
+-- ADO select_question_id INT NOT NULL;

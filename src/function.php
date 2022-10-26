@@ -6,9 +6,6 @@ if(isset($_GET['id'])) {
     $number= $_GET['id'];
     }
     // 問題の表示
-if(isset($_GET['question_id'])) {
-    $question= $_GET['question_id'];
-    }
 
 
 
@@ -27,23 +24,32 @@ if(isset($_GET['question_id'])) {
 big_question_id = :number');
 $stmt ->bindValue(':number', $number);
 $stmt->execute();
-$select_question_img = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+$question = $stmt ->fetchAll(PDO::FETCH_ASSOC);
 
 
-function question_number_random(){
-    if(isset($_GET['id'])) {
-        $question_id= $_GET['id'];
+function groupBy($key, array $ary): array
+{
+$result = [];
+
+foreach ($ary as $row) {
+        if (array_key_exists($key, $row)) {
+            $result[$row[$key]][] = $row;
+        } else {
+            $result[""][] = $row[$key];
         }
-    $dbh = new PDO("mysql:host=db; dbname=posse; charset=utf8", "root", "password");
-$select_select_question = $dbh->prepare('SELECT * FROM choices WHERE question_id = :number');
-$select_select_question ->bindValue(':number', $question_id);
-$sql = 'SELECT big_question_id FROM questions INNER JOIN choices  ON question_id =question_id';
-$select_select_question = $dbh->query($sql)->fetchColumn();
+    } 
 
-return $select_select_question;
+    return $result;
 }
-question_number_random();
-var_dump($select_select_question) ;
+
+$ssq = $dbh->prepare('SELECT * FROM questions INNER JOIN choices ON question_id = questions.id WHERE big_question_id = :number');
+$ssq ->bindValue(':number', $number);
+$ssq->execute();
+$choices = $ssq ->fetchAll(PDO::FETCH_ASSOC);
+$formatted_choices = groupBy('question_id', $choices);
+// print_r('<pre>');
+// var_dump($formatted_choices);
+// print_r('</pre>');
 
 // $select_select_question = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // // echo $select_select_question[];
