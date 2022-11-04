@@ -46,24 +46,17 @@ $ssq = $dbh->prepare('SELECT * FROM questions INNER JOIN choices ON question_id 
 $ssq ->bindValue(':number', $number);
 $ssq->execute();
 $choices = $ssq ->fetchAll(PDO::FETCH_ASSOC);
+$questions = $ssq ->fetchAll(PDO::FETCH_ASSOC);
+
 $formatted_choices = groupBy('question_id', $choices);
+
+// $formatted_questions = groupBy('question_id', $questions);
 // print_r('<pre>');
 // var_dump($formatted_choices);
 // print_r('</pre>');
 
-// $select_select_question = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// // echo $select_select_question[];
 
 
-
-
-
-// 問題の順番
-// $stmt = $dbh->prepare('SELECT * FROM choices where question_id = :question_id');
-// $stmt->bindValue(":question_id", $select_question);
-// $stmt->execute();
-// $select_select_question = $select_question->fetchAll(PDO::FETCH_ASSOC);
-// echo $select_select_question[0]['question_id'];
 
 
 ?>
