@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS webapp;
 CREATE DATABASE webapp;
 USE webapp;
 
+DROP TABLE IF EXISTS study_day_time;
+
 
 CREATE TABLE study_day_time(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -15,11 +17,6 @@ INSERT INTO study_day_time(study_day, study_time) VALUES
 
 
 
-
-
-
-
--- questions
 DROP TABLE IF EXISTS contents;
 
 CREATE TABLE contents(
@@ -33,8 +30,6 @@ INSERT INTO contents(study_contents) VALUES
 ('POSSE課題');
 
 
-
--- choices
 
 DROP TABLE IF EXISTS languages;
 
