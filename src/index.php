@@ -1,7 +1,5 @@
 <?=
 include('./db_connect.php');
-include('./function.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -58,7 +56,10 @@ include('./function.php');
                   <div class="checkbox_box">
                     <input type="checkbox" name="Nyobi" id="Nyobi" class="checkbox_input">
                     <label for="Nyobi" class="checkbox_label">
-                      <i class="default_checkbox"></i>N予備校
+                      <i class="default_checkbox"></i>
+                      <?php
+                      
+                      ?>
                     </label>
                   </div>
                   <div class="checkbox_box">
