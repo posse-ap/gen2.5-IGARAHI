@@ -1,3 +1,11 @@
+
+-- 次やること
+-- sqlの情報を変数にかえてindex.phpにぶち込む
+
+
+
+
+
 DROP DATABASE IF EXISTS webapp;
 CREATE DATABASE webapp;
 USE webapp;
