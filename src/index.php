@@ -3,13 +3,45 @@ session_start();
 
 include('./db_connect.php');
 
-if(isset($_SESSION['user_id'])){
-  $stmt = $dbh->query('SELECT language, color_code FROM languages');
-  $languages= $stmt->fetchAll();
-  
-  $stmt =$dbh->query('SELECT study_contents, color_code FROM contents');
-  $contents = $stmt->fetchAll();
-}
+// echo $user_id;
+// 言語
+$stmt = $dbh->query('SELECT language, color_code FROM languages');
+$languages = $stmt->fetchAll();
+// 時間
+$stmt = $dbh->query('SELECT * FROM study_day_time');
+$study_time = $stmt->fetchAll();
+// コンテンツ
+$stmt = $dbh->query('SELECT study_contents, color_code FROM contents');
+$contents = $stmt->fetchAll();
+// 全体の時間
+$stmt = $dbh->query('SELECT sum(study_time) FROM study_day_time');
+$total_study_time = $stmt->fetchAll();
+// 月の合計
+$stmt = $dbh->query('SELECT sum(study_time) from study_day_time where year= 2022 && month = 11 ');
+$month_study_time = $stmt->fetchAll();
+// 日の合計
+$stmt = $dbh->query('SELECT sum(study_time) from study_day_time where year= 2022 && month = 11 && day = 11');
+$day_study_time = $stmt->fetchAll();
+
+// 日ごとの合計
+$stmt = $dbh->query('SELECT day, sum(study_time) from study_day_time where year =2022 && month = 11 group by day');
+$each_day_study_time = $stmt->fetchAll();
+
+
+
+
+// print_r('<pre>');
+// var_dump($each_day_study_time);
+// print_r('</pre>');
+// $dbh = "SELECT * FROM study_day_time where num = $num";
+// $st = $pdo->query("SELECT SUM(num) FROM total");
+// While($row = $st->fetch()) {
+// $aaa = $row['SUM(num)'];
+// echo "$aaa";
+// }
+// echo $num;
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -33,7 +65,7 @@ if(isset($_SESSION['user_id'])){
 </head>
 
 <body>
-  <header class="l-header">
+  <!-- <header class="l-header">
     <div class="fixed_header">
       <div class="header_title">
         <div class="header_logo">
@@ -47,7 +79,7 @@ if(isset($_SESSION['user_id'])){
         </button>
       </div>
     </div>
-  </header>
+  </header> -->
 
   <main class="l-main">
     <div class="modal">
@@ -68,7 +100,7 @@ if(isset($_SESSION['user_id'])){
                     <label for="Nyobi" class="checkbox_label">
                       <i class="default_checkbox"></i>
                       <?php
-                      
+
                       ?>
                     </label>
                   </div>
@@ -232,21 +264,33 @@ if(isset($_SESSION['user_id'])){
           <div class="datasets_value_container">
             <div class="datasets_value_list">
               <p class="datasets_value_title">Today</p>
-              <p class="datasets_value_num">3</p>
+              <p class="datasets_value_num">
+              <?php
+                echo $day_study_time[0]['sum(study_time)'];
+                ?>
+              </p>
               <p class="datasets_value_unit">hour</p>
             </div>
           </div>
           <div class="datasets_value_container">
             <div class="datasets_value_list">
               <p class="datasets_value_title">Month</p>
-              <p class="datasets_value_num">120</p>
+              <p class="datasets_value_num">
+                <?php
+                echo $month_study_time[0]['sum(study_time)'];
+                ?>
+              </p>
               <p class="datasets_value_unit">hour</p>
             </div>
           </div>
           <div class="datasets_value_container">
             <div class="datasets_value_list">
               <p class="datasets_value_title">Total</p>
-              <p class="datasets_value_num">1348</p>
+              <p class="datasets_value_num">
+                <?php
+                echo $total_study_time[0]['sum(study_time)'];
+                ?>
+              </p>
               <p class="datasets_value_unit">hour</p>
             </div>
           </div>

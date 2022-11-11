@@ -18,13 +18,21 @@ DROP TABLE IF EXISTS study_day_time;
 CREATE TABLE study_day_time(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   user_id INT(20) NOT NULL,
-  study_day VARCHAR(255) NOT NULL,
+  year INT(20) NOT NULL,
+  month INT(20) NOT NULL,
+  day INT(20) NOT NULL,
   study_time decimal(10) NOT NULL
 );
 
-INSERT INTO study_day_time(user_id, study_day, study_time) VALUES 
-(1,'2022-11-10','5'),
-(1,'2022-11-11','6');
+INSERT INTO study_day_time(user_id, year, month, day, study_time) VALUES 
+(1,'2022','11',13,'5'),
+(1,'2022','11',11,'6'),
+(1,'2022','11',11,'3'),
+(1,'2021','10',4,'12'),
+(1,'2022','10',15,'2'),
+(1,'2021','9',13,'8'),
+(1,'2022','9',21,'3');
+
 
 
 DROP TABLE IF EXISTS contents;
