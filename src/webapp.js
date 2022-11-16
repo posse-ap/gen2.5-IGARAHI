@@ -1,5 +1,4 @@
 "use strict";
-
 {
   const buttons = document.querySelectorAll(".header_btn");
   // console.log(button);
@@ -86,17 +85,8 @@
   async function timeBar() {
     const response = await fetch(url);
     const datas = await response.json();
-    console.log(datas);
+    // console.log(datas);
 
-    // const day = datas.map(dataset => {
-    //   return dataset.day;
-    // })
-    // console.log(day);
-    // const time = datas.map(dataset => {
-    //   return dataset.time;
-    // });
-    // console.log(time);
-    // [0,0,0,0,0,0,0,0,0,0,0,9,0,5,0,.....]
     let time = [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -208,7 +198,7 @@
   timeBar();
 })();
 
-{
+// {
   var dataLabelPlugin = {
     afterDatasetsDraw: function (chart) {
       var ctx = chart.ctx;
@@ -243,12 +233,12 @@
       });
     },
   };
-
+  
+  // console.log('languages');
   (function () {
-    "use strict";
 
-    const url =
-      "./API/language.php";
+
+    const url = "./API/language.php";
 
     async function langPie() {
       const response = await fetch(url);
@@ -263,75 +253,76 @@
       const total = ratio[0].reduce(function (sum, element) {
         return sum + element;
       }, 0);
-      console.log(languages);
 
-      // console.log(ratio[0].map(data => {
-      //   return data/total*100;
-      // }))
-
-      var type = "doughnut";
-
+      // console.log(languages);
+      
+      let a_language =[2,4,3,2,4,6,8,10];
+      
+      
+      for (let i = 0; i < languages.length; i++) {
+        a_language[languages[i]["language"]-1] = languages[i]["color_code"];
+        console.log(a_language);
+      }
+      
       var data = {
         labels: lang[0],
         datasets: [
           {
-            data: ratio[0].map((data) => {
-              return Math.round((data / total) * 100);
+            data: a_language,
+            // ratio[0].map((a_language) => {
+            //   return Math.round((a_language / total) * 100);
               // //[
-                  let languages = [0,0,0,0,0,0,0,0];
-                  languages[0][1];
-              // ]
-            }),
-            backgroundColor: [
-              "	#0042E5",
-              "	#0070BA",
-              "	#02BDDB",
-              "	#04CDFA",
-              "	#B39DED",
-              "	#6C44E6",
-              "	#4609E8",
-              "	#2B01BA",
-            ],
-            pointStyle: "circle",
+                // ]
+              // }),
+              backgroundColor: [
+                "	#0042E5",
+                "	#0070BA",
+                "	#02BDDB",
+                "	#04CDFA",
+                "	#B39DED",
+                "	#6C44E6",
+                "	#4609E8",
+                "	#2B01BA",
+              ],
+              pointStyle: "circle",
+            },
+          ],
+        };
+        var options = {
+          cutoutPercentage: 40,
+          legend: {
+            position: "bottom",
+            // align: 'start',
+            labels: {
+              usePointStyle: true,
+            },
           },
-        ],
-      };
-
-      var options = {
-        cutoutPercentage: 40,
-        legend: {
-          position: "bottom",
-          // align: 'start',
-          labels: {
-            usePointStyle: true,
-          },
-        },
-        responsive: true,
+          responsive: true,
         maintainAspectRatio: false,
         // plugins: {
-        //   tooltip: {
-        //     enabled: 'false'
-        //   }
-        // }
-      };
-
-      var ctx = document.getElementById("pie-charts_lang").getContext("2d");
-      var myChart = new Chart(ctx, {
-        type: type,
-        data: data,
-        options: options,
-        plugins: [dataLabelPlugin],
-      });
-    }
-
-    langPie();
-  })();
-
-  (function () {
-    "use strict";
-
-    const url =
-      "http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json";
+          //   tooltip: {
+            //     enabled: 'false'
+            //   }
+            // }
+          };
+          
+          var ctx = document.getElementById("pie-charts_lang").getContext("2d");
+          var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: options,
+            plugins: [dataLabelPlugin],
+          });
+          
+        }
+        langPie();
+      })();
+      
+      (function () {
+        "use strict";
+        
+        const url =
+        "http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json";
 
     async function contentPie() {
       const response = await fetch(url);
@@ -387,4 +378,4 @@
 
     contentPie();
   })();
-}
+// }

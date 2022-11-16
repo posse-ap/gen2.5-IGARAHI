@@ -68,4 +68,16 @@ INSERT INTO languages(language, color_code) VALUES
 ('その他','#2B01BA');
 
 
+DROP TABLE IF EXISTS conclusion;
+
+CREATE TABLE conclusion(
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  study_day_time_id INT(20) NOT NULL,
+  languages_id INT(20) NOT NULL
+)
+INSERT INTO conclusion (study_day_time_id, languages_id) VALUES
+(1,1);
+
+
+
 
