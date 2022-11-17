@@ -2,6 +2,7 @@
 session_start();
 
 include('./db_connect.php');
+// include('./API/language.php');
 
 // echo $user_id;
 // 言語
@@ -28,7 +29,9 @@ $stmt = $dbh->query('SELECT day, sum(study_time) from study_day_time where year 
 $each_day_study_time = $stmt->fetchAll();
 
 
-
+// print_r('<pre>');
+// var_dump($study_languages);
+// print_r('</pre>');
 
 // print_r('<pre>');
 // var_dump($each_day_study_time);

@@ -235,8 +235,10 @@
   };
   
   // console.log('languages');
+  console.log('1');
   (function () {
-
+    
+    // console.log('1');
 
     const url = "./API/language.php";
 
@@ -255,41 +257,41 @@
       }, 0);
 
       // console.log(languages);
-      
-      let a_language =[2,4,3,2,4,6,8,10];
-      
-      
+
+
+      let a_language =[0,0,0,0,0,0,0,0];
+      let languages_name =["aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa"];
+      let languages_color =["aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa"];
       for (let i = 0; i < languages.length; i++) {
-        a_language[languages[i]["language"]-1] = languages[i]["color_code"];
-        console.log(a_language);
+        languages_name[languages[i]["id"]-1] = languages[i]["language"];
+        languages_color[languages[i]["id"]-1] = languages[i]["color_code"];
+        a_language[languages[i]["id"]] = Number(languages[i]["sum(study_time)"]);
       }
-      
-      var data = {
-        labels: lang[0],
-        datasets: [
-          {
-            data: a_language,
-            // ratio[0].map((a_language) => {
-            //   return Math.round((a_language / total) * 100);
-              // //[
-                // ]
-              // }),
-              backgroundColor: [
-                "	#0042E5",
-                "	#0070BA",
-                "	#02BDDB",
-                "	#04CDFA",
-                "	#B39DED",
-                "	#6C44E6",
-                "	#4609E8",
-                "	#2B01BA",
-              ],
-              pointStyle: "circle",
-            },
-          ],
-        };
-        var options = {
-          cutoutPercentage: 40,
+
+
+    
+    
+        // console.log(languages);
+        
+        
+        var data = {
+          labels: languages_name,
+          datasets: [
+            {
+              data: a_language,
+              // ratio[a_language].map((a_language) => {
+              //     return Math.round((a_language / total) * 100);
+              //   }),
+                backgroundColor: 
+                languages_color,
+                pointStyle: "circle",
+              },
+            ],
+          };
+          // console.log(ratio[1]);
+          // console.log(data);
+          var options = {
+            cutoutPercentage: 40,
           legend: {
             position: "bottom",
             // align: 'start',
@@ -298,14 +300,14 @@
             },
           },
           responsive: true,
-        maintainAspectRatio: false,
-        // plugins: {
-          //   tooltip: {
-            //     enabled: 'false'
-            //   }
-            // }
-          };
-          
+          maintainAspectRatio: false,
+          // plugins: {
+            //   tooltip: {
+              //     enabled: 'false'
+              //   }
+              // }
+            };
+            
           var ctx = document.getElementById("pie-charts_lang").getContext("2d");
           var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -335,7 +337,7 @@
         return Object.values(dataset);
       });
 
-      var type = "doughnut";
+      // var type = "doughnut";
 
       var data = {
         labels: content[0],
@@ -369,7 +371,7 @@
 
       var ctx = document.getElementById("pie-charts_content").getContext("2d");
       var myChart = new Chart(ctx, {
-        type: type,
+        type: "doughnut",
         data: data,
         options: options,
         plugins: [dataLabelPlugin],

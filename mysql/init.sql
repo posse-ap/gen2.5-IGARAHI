@@ -74,9 +74,17 @@ CREATE TABLE conclusion(
   id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   study_day_time_id INT(20) NOT NULL,
   languages_id INT(20) NOT NULL
-)
+);
+
 INSERT INTO conclusion (study_day_time_id, languages_id) VALUES
-(1,1);
+(1,4),
+(2,3),
+(3,5),
+(4,6),
+(5,7),
+(6,3),
+(7,2),
+(8,1);
 
 
 
