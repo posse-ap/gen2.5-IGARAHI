@@ -235,7 +235,7 @@
   };
   
   // console.log('languages');
-  console.log('1');
+  // console.log('1');
   (function () {
     
     // console.log('1');
@@ -319,32 +319,42 @@
         }
         langPie();
       })();
-      
+
+
       (function () {
-        "use strict";
-        
-        const url =
-        "http://posse-task.anti-pattern.co.jp/1st-work/study_contents.json";
+
+        const url ="./API/contents.php";
 
     async function contentPie() {
       const response = await fetch(url);
       const datas = await response.json();
-      // return lang = Object.keys(datas[0]);
-      const content = datas.map((dataset) => {
+      const contents = datas.map((dataset) => {
         return Object.keys(dataset);
       });
       const ratio = datas.map((dataset) => {
         return Object.values(dataset);
       });
+      const total = ratio[0].reduce(function (sum, element) {
+        return sum + element;
+      }, 0);
+      // console.log(datas);
 
-      // var type = "doughnut";
 
+
+      let study_contents_name = ["a","a","a"];
+      let study_time = [0,0,0,0,0,0,0];
+      let study_contents_color_code = ["aa","aa","aa"]
+      for (let i = 0; i < datas.length; i++) {
+        study_contents_name[datas[i]["id"]-1] = datas[i]["study_contents"];
+        study_time[datas[i]["id"]-1] = datas[i]["study_time"];
+        study_contents_color_code[datas[i]["id"]-1] = datas[i]["color_code"];
+      }
       var data = {
-        labels: content[0],
+        labels: study_contents_name,
         datasets: [
           {
-            data: ratio[0],
-            backgroundColor: ["#0042E5", "#0070BA", "#02BDDB"],
+            data: study_time,
+            backgroundColor: study_contents_color_code,
             pointStyle: "circle",
             // textAlign: 'left',
           },

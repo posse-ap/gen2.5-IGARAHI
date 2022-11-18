@@ -86,6 +86,22 @@ INSERT INTO conclusion (study_day_time_id, languages_id) VALUES
 (7,2),
 (8,1);
 
+DROP TABLE IF EXISTS contents_conclusion;
+
+CREATE TABLE contents_conclusion(
+  id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  study_time_id INT(20) NOT NULL,
+  contents_id INT(20) NOT NULL
+);
+
+INSERT INTO contents_conclusion(study_time_id, contents_id) VALUES
+(7,1),
+(2,3),
+(6,2);
+
+
+
+
 
 
 
